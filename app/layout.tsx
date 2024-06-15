@@ -3,7 +3,6 @@ import type { ReactNode } from "react";
 import { Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 import "./globals.css";
-import { sessionCached } from "@/auth";
 
 const inter = Inter({
     subsets: ["latin"],
@@ -20,7 +19,6 @@ export default function RootLayout({
 }: Readonly<{
     children: ReactNode;
 }>) {
-    sessionCached();
     return (
         <html lang="en">
             <body className={cn("min-h-screen bg-background font-sans antialiased", inter.className)}>{children}</body>
